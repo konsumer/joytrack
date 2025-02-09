@@ -3,6 +3,7 @@
 
 [theme]
 font = "CozetteCrossedSevenVector.ttf"
+backdrop = [0.5, 0, 0.5, 1]
 
 [commands]
 play_toggle=KEY_SPACE

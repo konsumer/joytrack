@@ -4,7 +4,7 @@ project(joytrack
   DESCRIPTION "Joystick-driven musical tracker"
   HOMEPAGE_URL "https://github.com/konsumer/joytrack"
   VERSION 0.0.1
-  LANGUAGES C
+  LANGUAGES C CXX
 )
 
 set(CMAKE_BUILD_TYPE Release)
@@ -27,11 +27,16 @@ endif()
 # enable colors for ninja
 set(CMAKE_COLOR_DIAGNOSTICS ON)
 
+set(CMAKE_SUPPRESS_DEVELOPER_WARNINGS ON CACHE BOOL "" FORCE)
+
 include(FetchContent)
 # set(FETCHCONTENT_QUIET OFF)
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
 find_package(tomlc99 REQUIRED)
+find_package(glfw REQUIRED)
+find_package(OpenGL REQUIRED)
+find_package(imgui REQUIRED)
 
-add_executable(${PROJECT_NAME} src/main.c)
-target_link_libraries(${PROJECT_NAME} tomlc99)
+add_executable(${PROJECT_NAME} src/main.cpp)
+target_link_libraries(${PROJECT_NAME} tomlc99 glfw imgui)
