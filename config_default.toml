@@ -1,0 +1,15 @@
+# this should have every available config option, and sets the defaults
+# file-paths are relative to current-directory
+
+[theme]
+font = "CozetteCrossedSevenVector.ttf"
+
+[commands]
+play_toggle=KEY_SPACE
+record_toggle=KEY_CAPS_LOCK
+edit_toggle=KEY_LEFT_CONTROL
+move_up=KEY_UP
+move_down=KEY_DOWN
+move_column_next=KEY_RIGHT
+move_column_previous=KEY_LEFT
+pattern_load=KEY_ENTER
