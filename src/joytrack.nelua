@@ -1,0 +1,42 @@
+require "raylib"
+require "theme"
+
+local SCREEN_WIDTH: uint16 <comptime> = 1200
+local SCREEN_HEIGHT: uint16 <comptime> = 800
+
+rl.setTraceLogLevel(rl.traceLogLevel.WARNING)
+
+rl.setConfigFlags(rl.configFlags.VSYNC_HINT)
+rl.initWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "joytrack")
+
+-- 32 tracks x 64 positions
+local pattern_notes: [32][64]int32
+local pattern_instruments: [32][64]int32
+local pattern_effects: [32][64]int32
+
+-- track/row/column position of cursor
+local screnPos: [3]int32
+
+-- this will draw the header for pattern-editor
+local function draw_header(x:int32, y: int32, w:int32, h:int32)
+    rl.drawRectangle(x,  y, w, h, theme.panel_bg)
+end
+-- this will draw the current state of the pattern in a panel (shows all tracks and window of positions)
+local function draw_pattern(x:int32, y: int32)
+    local w = rl.measureText(" " .. string.rep("000 ", #pattern_notes), theme.font_size_regular)
+    local h = theme.font_size_regular + 2
+
+    rl.drawRectangle(x,  y, w, h, theme.panel_bg)
+
+    local textWidth = rl.measureText("0", theme.font_size_regular)
+end
+
+repeat
+    rl.beginDrawing()
+    rl.clearBackground(theme.bg)
+    draw_header(10, 10,  SCREEN_WIDTH-20, 80)
+    draw_pattern(10, 100)
+    rl.endDrawing()
+until rl.windowShouldClose()
+
+rl.closeWindow()

@@ -1,0 +1,16 @@
+-- This defines look of app
+global theme = @record{}
+
+-- this applies to the whole window
+global theme.bg = rl.BLACK
+
+-- this is a panel (which is where everything else is drawn)
+global theme.panel_bg = rl.GRAY
+global theme.panel_fg = rl.WHITE
+global theme.panel_border = rl.LIGHTGRAY
+
+global theme.font_size_regular = 18
+
+
+-- this must be fixed-width for everyhting to work right, but you can load with any raylib functions
+global theme.font = rl.getFontDefault()
