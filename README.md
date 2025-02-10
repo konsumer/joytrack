@@ -2,7 +2,7 @@
 
 Joystick music-making program, inspired by trackers.
 
-This is a simple music tracker (sort of) that is written in [nelua](https://nelua.io/) and uses [Raylib.nelua]https://github.com/AuzFox/Raylib.nelua).
+This is a simple music tracker (sort of) that is written in [nelua](https://nelua.io/) and uses [Raylib.nelua](https://github.com/AuzFox/Raylib.nelua).
 
 It takes inspiration from [Renoise](https://www.renoise.com/), [FastTracker2](https://en.wikipedia.org/wiki/FastTracker_2) and [ShieldTracker](https://bleep.toys/stracker/), as well as [M8](https://dirtywave.com/), which are all great, but I think it has it's own original flavor.
 
